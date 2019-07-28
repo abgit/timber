@@ -1,0 +1,13 @@
+{
+	"name": "abgit/timber",
+	"description": "a simple timber.io php sdk",
+    "require": {
+        "ext-json": "*",
+        "rmccue/requests": "1.*"
+	},
+	"autoload": {
+        "psr-4": {
+            "timber\\": "src/"
+        }
+    }
+}
