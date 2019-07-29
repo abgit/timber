@@ -45,7 +45,7 @@ class log{
     }
 
     public function message( $level, $message, $meta, $timestamp ){
-        return json_encode( array( "level" => $level, "message" => $message ) + ( is_array( $meta ) ? $meta : array() ) + ( is_null( $timestamp ) ? array() : array( 'dt' => date( 'c', $timestamp ) ) ) );
+        return json_encode( array( "level" => $level, "message" => $message, 'dt' => ( is_null( $timestamp ) ? date( sprintf( 'Y-m-d\TH:i:s%s\Z', substr( microtime(), 1, 4 ) ) ) : $timestamp ) ) + ( is_array( $meta ) ? $meta : array() ) );
     }
 
     public function post( $messages ){
